@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clearvue Property | Brisbane Buyers Agency</title>
+<meta name="description" content="Clearvue Property is a Brisbane-based buyers agency helping first home buyers and investors find, assess and secure the right property — with clarity and confidence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0C1C38;
+    --navy-mid: #162d55;
+    --tan: #9A8B78;
+    --tan-light: #C9BBAC;
+    --tan-pale: #F2EDE7;
+    --cream: #FAF7F4;
+    --white: #ffffff;
+    --text-dark: #0C1C38;
+    --text-mid: #4a5568;
+    --text-light: #8a9ab0;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12, 28, 56, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(154, 139, 120, 0.2);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--tan-light); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--tan-light); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy) !important;
+    background: var(--tan-light);
+    padding: 10px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--white); color: var(--navy) !important; }
+
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 5% 80px;
+  }
+
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80&fit=crop');
+    background-size: cover;
+    background-position: center 60%;
+    opacity: 0.18;
+  }
+
+  .hero-bg-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(154,139,120,1) 60px, rgba(154,139,120,1) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(154,139,120,1) 60px, rgba(154,139,120,1) 61px);
+  }
+
+  .hero-accent {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(154,139,120,0.12);
+    pointer-events: none;
+  }
+
+  .hero-accent::before {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(154,139,120,0.08);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--tan);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--tan-light); }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-bottom: 48px;
+    max-width: 520px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--tan);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+  }
+
+  .btn-primary:hover { background: var(--tan-light); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    background: none;
+    font-family: var(--font-body);
+  }
+
+  .btn-ghost:hover { color: var(--tan-light); border-color: var(--tan); }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 60px;
+    right: 5%;
+    display: flex;
+    gap: 48px;
+    z-index: 2;
+  }
+
+  .stat { text-align: right; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .marquee-strip {
+    background: var(--tan);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 28s linear infinite;
+  }
+
+  .marquee-inner span {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin: 0 40px;
+  }
+
+  .marquee-inner span::before { content: '✦'; margin-right: 40px; opacity: 0.5; }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  section { padding: 100px 5%; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--tan);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-title em { font-style: italic; color: var(--tan); }
+
+  .about { background: var(--white); }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-img-block { position: relative; }
+
+  .about-img-placeholder {
+    background: var(--navy);
+    border-radius: 4px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-tag {
+    position: relative;
+    z-index: 2;
+    background: rgba(12,28,56,0.7);
+    border: 1px solid rgba(154,139,120,0.4);
+    border-radius: 2px;
+    padding: 16px 20px;
+    backdrop-filter: blur(8px);
+  }
+
+  .about-img-tag p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .about-img-tag strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .about-stat-pill {
+    position: absolute;
+    top: 40px;
+    right: -24px;
+    background: var(--tan-pale);
+    border: 1px solid var(--tan-light);
+    border-radius: 2px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .about-stat-pill strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .about-stat-pill small { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tan); }
+
+  .about-content .section-body {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .about-values { display: flex; flex-direction: column; gap: 0; margin: 36px 0; }
+
+  .about-value {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(154,139,120,0.15);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  .about-value:first-child { border-top: 1px solid rgba(154,139,120,0.15); }
+
+  .about-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tan); flex-shrink: 0; }
+
+  .intro { background: var(--cream); }
+
+  .intro-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .intro-body { font-size: 17px; font-weight: 300; color: var(--text-mid); line-height: 1.85; margin-bottom: 36px; }
+  .intro-body p + p { margin-top: 20px; }
+  .intro-visual { position: relative; }
+
+  .intro-card { background: var(--navy); border-radius: 4px; padding: 48px; color: var(--white); }
+
+  .intro-card-quote {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+  }
+
+  .intro-card-rule { width: 40px; height: 1px; background: var(--tan); margin-bottom: 20px; }
+  .intro-card-name { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tan-light); }
+
+  .intro-floating-tag {
+    position: absolute;
+    top: -24px;
+    right: -24px;
+    background: var(--tan-pale);
+    border: 1px solid var(--tan-light);
+    border-radius: 2px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .intro-floating-tag strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .intro-floating-tag small { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tan); }
+
+  .services { background: var(--white); }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+  .services-header { margin-bottom: 64px; max-width: 560px; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--tan-pale);
+  }
+
+  .service-card { background: var(--white); padding: 48px 40px; transition: background 0.3s; position: relative; }
+  .service-card:hover { background: var(--cream); }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--tan-light);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .service-icon svg { width: 20px; height: 20px; stroke: var(--tan); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .service-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+  .service-card p { font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 28px; }
+
+  .service-link {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tan);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid transparent;
+    border-top: none; border-left: none; border-right: none;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    background: none;
+    font-family: var(--font-body);
+    padding: 0;
+  }
+
+  .service-link:hover { border-bottom-color: var(--tan); }
+
+  .process { background: var(--navy); position: relative; overflow: hidden; }
+
+  .process::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(154,139,120,0.1);
+    pointer-events: none;
+  }
+
+  .process-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .process-header { margin-bottom: 72px; max-width: 560px; }
+  .process-header .section-title { color: var(--white); }
+
+  .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 10%; right: 10%;
+    height: 1px;
+    background: rgba(154,139,120,0.2);
+  }
+
+  .process-step { padding: 0 20px; }
+
+  .step-dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(154,139,120,0.4);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px;
+    background: var(--navy);
+    position: relative; z-index: 2;
+  }
+
+  .step-dot span { font-family: var(--font-display); font-size: 18px; font-weight: 300; color: var(--tan-light); }
+  .process-step h4 { font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
+  .process-step p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+  .why { background: var(--cream); }
+
+  .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .why-list { margin-top: 48px; }
+
+  .why-item { padding: 28px 0; border-bottom: 1px solid rgba(154,139,120,0.2); display: flex; gap: 24px; align-items: flex-start; }
+  .why-item:first-child { border-top: 1px solid rgba(154,139,120,0.2); }
+
+  .why-num { font-family: var(--font-display); font-size: 13px; font-weight: 300; color: var(--tan); flex-shrink: 0; margin-top: 2px; letter-spacing: 0.1em; }
+  .why-item h4 { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--navy); margin-bottom: 8px; }
+  .why-item p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+  .why-right { padding-top: 8px; }
+
+  .why-accent-box { background: var(--navy); padding: 48px; border-radius: 4px; margin-bottom: 24px; }
+
+  .why-accent-box p { font-family: var(--font-display); font-size: 24px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5; margin-bottom: 24px; }
+  .why-accent-box .rule { width: 32px; height: 1px; background: var(--tan); margin-bottom: 16px; }
+  .why-accent-box cite { font-style: normal; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tan-light); }
+
+  .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .why-feature { background: var(--white); border: 1px solid rgba(154,139,120,0.2); border-radius: 2px; padding: 20px; }
+  .why-feature-icon { margin-bottom: 12px; color: var(--tan); font-size: 18px; }
+  .why-feature h5 { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+  .why-feature p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+
+  .faq { background: var(--white); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 64px; }
+  .faq-header .section-eyebrow { justify-content: center; }
+  .faq-header .section-eyebrow::before { display: none; }
+  .faq-item { border-bottom: 1px solid rgba(154,139,120,0.2); }
+  .faq-item:first-of-type { border-top: 1px solid rgba(154,139,120,0.2); }
+
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    text-align: left; font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--navy); transition: color 0.2s;
+  }
+
+  .faq-q:hover { color: var(--tan); }
+  .faq-icon { width: 20px; height: 20px; flex-shrink: 0; position: relative; }
+
+  .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--tan); transition: opacity 0.3s; }
+  .faq-icon::before { width: 16px; height: 1px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .faq-icon::after { width: 1px; height: 16px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .faq-item.open .faq-icon::after { opacity: 0; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a-inner { padding: 0 0 24px; font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.85; }
+  .faq-item.open .faq-a { max-height: 300px; }
+
+  .cta-strip { background: var(--tan); padding: 80px 5%; }
+
+  .cta-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+
+  .cta-text h2 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+  .cta-text p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.8); }
+
+  .btn-cta-white {
+    display: inline-block; background: var(--white); color: var(--navy);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 18px 40px; border-radius: 2px; text-decoration: none; white-space: nowrap;
+    transition: background 0.2s; flex-shrink: 0; cursor: pointer; border: none; font-family: var(--font-body);
+  }
+
+  .btn-cta-white:hover { background: var(--cream); }
+
+  .booking { background: var(--navy); padding: 100px 5%; }
+  .booking-inner { max-width: 1200px; margin: 0 auto; }
+
+  .booking-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 56px; }
+  .booking-header .section-title { color: var(--white); }
+
+  .booking-right p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 24px; }
+  .booking-perks { display: flex; flex-direction: column; gap: 12px; }
+
+  .booking-perk { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7); }
+  .booking-perk-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tan); flex-shrink: 0; }
+  .calendly-embed { border-radius: 4px; overflow: hidden; min-height: 700px; }
+
+  .contact { background: var(--cream); }
+
+  .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+
+  .contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 15px; font-weight: 300; color: var(--text-mid); }
+  .contact-detail a { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+  .contact-detail a:hover { color: var(--navy); }
+  .contact-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tan); flex-shrink: 0; }
+
+  .contact-form { background: var(--white); padding: 48px; border-radius: 4px; border: 1px solid rgba(154,139,120,0.15); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { margin-bottom: 16px; }
+
+  .form-group label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 8px; }
+
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px;
+    border: 1px solid rgba(154,139,120,0.3); border-radius: 2px;
+    font-family: var(--font-body); font-size: 15px; font-weight: 300; color: var(--navy);
+    background: var(--white); outline: none; transition: border-color 0.2s; appearance: none;
+  }
+
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--tan); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    width: 100%; background: var(--navy); color: var(--white); border: none; padding: 16px;
+    font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px; margin-top: 8px; transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--navy-mid); }
+
+  .success-tick-wrap { display: flex; justify-content: center; margin-bottom: 4px; }
+  .success-tick { width: 64px; height: 64px; }
+
+  .tick-circle {
+    stroke: var(--tan); stroke-width: 2;
+    stroke-dasharray: 166; stroke-dashoffset: 166;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .tick-check {
+    stroke: var(--tan); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 48; stroke-dashoffset: 48;
+    animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+  }
+
+  @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+
+  .form-fields-hide { animation: fadeOut 0.4s ease forwards; }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+  }
+
+  #formSuccess.show { animation: fadeIn 0.5s ease 0.3s both; }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  footer { background: var(--navy); padding: 64px 5% 32px; }
+
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid rgba(154,139,120,0.15); margin-bottom: 32px; }
+
+  .footer-brand { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--white); letter-spacing: 0.04em; margin-bottom: 16px; }
+  .footer-brand span { color: var(--tan-light); }
+  .footer-tagline { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 280px; }
+
+  .footer-col h5 { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--tan); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+  .footer-col ul li a:hover { color: var(--tan-light); }
+
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .footer-legal { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1.6; }
+  .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; }
+  .footer-abn { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.25); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: rgba(255,255,255,0.8); transition: transform 0.3s, opacity 0.3s; }
+
+  .mobile-nav {
+    display: none; position: fixed; top: 72px; left: 0; right: 0;
+    background: rgba(12,28,56,0.98); backdrop-filter: blur(12px);
+    z-index: 99; padding: 24px 5% 32px;
+    border-top: 1px solid rgba(154,139,120,0.15); flex-direction: column; gap: 0;
+  }
+
+  .mobile-nav.open { display: flex; }
+
+  .mobile-nav a {
+    display: block; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.8);
+    text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(154,139,120,0.1);
+    transition: color 0.2s; cursor: pointer;
+  }
+
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--tan-light); }
+
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-inner, .intro-inner, .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .intro-floating-tag, .about-stat-pill { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 32px; }
+    .process-steps::before { display: none; }
+    .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    .why-features { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .booking-header { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="javascript:void(0)" onclick="scrollToSection('home')" class="nav-logo">Clearvue<span> Property</span></a>
+  <ul class="nav-links">
+    <li><a href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Services</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('process')">How It Works</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('why')">Why Clearvue</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('faq')">FAQ</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('booking')" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="javascript:void(0)" onclick="scrollToSection('about');toggleMenu()">About</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('services');toggleMenu()">Services</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('process');toggleMenu()">How It Works</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('why');toggleMenu()">Why Clearvue</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('faq');toggleMenu()">FAQ</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('contact');toggleMenu()">Contact</a>
+  <a href="javascript:void(0)" onclick="scrollToSection('booking');toggleMenu()" style="color:var(--tan-light);font-weight:500;">Book a Call →</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg-lines"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Brisbane Buyers Agency</div>
+    <h1>Buy with<br><em>clarity.</em><br>Not confusion.</h1>
+    <p class="hero-sub">Clearvue Property helps first home buyers and investors find, assess and secure the right property — without the stress, guesswork, or wasted weekends.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="scrollToSection('booking')">Book a Free Chat</button>
+      <button class="btn-ghost" onclick="scrollToSection('services')">Explore Services →</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">In Your Corner</div></div>
+    <div class="stat"><div class="stat-num">Flat</div><div class="stat-label">Fee Structure</div></div>
+    <div class="stat"><div class="stat-num">QLD</div><div class="stat-label">Licensed Agent</div></div>
+  </div>
+</section>
+
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>First Home Buyers</span><span>Property Investors</span><span>Brisbane & Southeast QLD</span>
+    <span>No Hidden Commissions</span><span>Flat Fee Certainty</span><span>Licensed Buyers Agent</span>
+    <span>Off-Market Access</span><span>End-to-End Support</span>
+    <span>First Home Buyers</span><span>Property Investors</span><span>Brisbane & Southeast QLD</span>
+    <span>No Hidden Commissions</span><span>Flat Fee Certainty</span><span>Licensed Buyers Agent</span>
+    <span>Off-Market Access</span><span>End-to-End Support</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-block fade-up">
+      <div class="about-img-placeholder">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fit=crop&crop=top" alt="Professional property consultation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;">
+        <div class="about-img-tag" style="position:relative;z-index:2;">
+          <strong>Connor</strong>
+          <p>Founder & Buyers Agent<br>Clearvue Property</p>
+        </div>
+      </div>
+      <div class="about-stat-pill">
+        <strong>SEQ</strong>
+        <small>Personal Portfolio</small>
+      </div>
+    </div>
+    <div class="about-content fade-up">
+      <div class="section-eyebrow">About Connor</div>
+      <h2 class="section-title">Investing done right <em>opens doors</em> for everyday Australians</h2>
+      <p class="section-body">Property has long been one of the most reliable vehicles for building long-term wealth — but for most people, the path to getting there is unclear, expensive, and riddled with misinformation. That's what drives me.</p>
+      <p class="section-body">I started Clearvue Property because I genuinely believe that smart property decisions shouldn't be reserved for those who already have the connections or the experience. With the right guidance, first home buyers and everyday investors can make moves that set them up for decades to come.</p>
+      <p class="section-body">I've built my own investment portfolio across Southeast Queensland, and that hands-on experience shapes how I approach every client search — not from theory, but from having skin in the game. I know what good looks like, and I know what to avoid.</p>
+      <p class="section-body">With a background working toward my Chartered Accountant qualification, I bring a level of financial rigour to property analysis that most buyers agents simply don't. Every property I recommend is assessed through both a market lens and a numbers lens.</p>
+      <div class="about-values">
+        <div class="about-value"><div class="about-value-dot"></div>Personal investment portfolio across Southeast QLD</div>
+        <div class="about-value"><div class="about-value-dot"></div>Chartered Accountant candidate — financial rigour applied</div>
+        <div class="about-value"><div class="about-value-dot"></div>Licensed under the QLD Property Occupations Act 2014</div>
+        <div class="about-value"><div class="about-value-dot"></div>Focused exclusively on buyers — never vendors</div>
+      </div>
+      <button class="btn-primary" onclick="scrollToSection('booking')">Book a Discovery Call</button>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="intro-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">About Clearvue</div>
+      <h2 class="section-title">The property market is complex.<br><em>Your agent shouldn't be.</em></h2>
+      <div class="intro-body">
+        <p>Most buyers walk into the market alone — navigating conflicting advice, aggressive selling agents, and the constant fear of overpaying or missing out. It's exhausting, and costly mistakes are all too common.</p>
+        <p>Clearvue Property was built to fix that. As your dedicated buyers agent, we work exclusively for you — searching the market, assessing every property, and negotiating the best possible outcome on your behalf.</p>
+        <p>Whether you're buying your first home or building a portfolio, you'll have a qualified, experienced advocate by your side from the very first conversation through to the day you get the keys.</p>
+      </div>
+      <button class="btn-primary" onclick="scrollToSection('contact')">Start the Conversation</button>
+    </div>
+    <div class="intro-visual fade-up">
+      <div class="intro-floating-tag">
+        <strong>POA 2014</strong>
+        <small>QLD Licensed</small>
+      </div>
+      <div class="intro-card" style="position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80&fit=crop" alt="Property exterior Brisbane" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;border-radius:4px;">
+        <div style="position:relative;z-index:2;">
+          <p class="intro-card-quote">"We don't follow the crowd — we guide you through it, with strategy, ethics, and clear communication at every step."</p>
+          <div class="intro-card-rule"></div>
+          <div class="intro-card-name">Connor — Founder, Clearvue Property</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header fade-up">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Services built around <em>your</em> goals</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card fade-up" style="padding-top:0;">
+        <div style="margin:0 0 32px;height:200px;overflow:hidden;border-radius:2px 2px 0 0;">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80&fit=crop" alt="Modern Queensland home" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="padding:0 40px 48px;">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+          <h3>Full Buyers Agency</h3>
+          <p>End-to-end support from initial strategy through to settlement. We handle the search, assessment, negotiation, due diligence, and coordination — so you don't have to.</p>
+          <ul style="font-size:14px;font-weight:300;color:var(--text-mid);line-height:2;padding-left:0;list-style:none;margin-bottom:28px;">
+            <li>✦ &nbsp;Buyer brief & strategy session</li>
+            <li>✦ &nbsp;On & off-market property search</li>
+            <li>✦ &nbsp;Property assessment & shortlisting</li>
+            <li>✦ &nbsp;Price negotiation & offer management</li>
+            <li>✦ &nbsp;Due diligence & settlement support</li>
+          </ul>
+          <button class="service-link" onclick="scrollToSection('contact')">Enquire Now →</button>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="padding-top:0;">
+        <div style="margin:0 0 32px;height:200px;overflow:hidden;border-radius:2px 2px 0 0;">
+          <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=700&q=80&fit=crop" alt="Property search and analysis" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="padding:0 40px 48px;">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>Property Search & Assessment</h3>
+          <p>Already have a clear brief but need someone to do the legwork? We source and assess properties that genuinely meet your criteria, saving you weeks of wasted inspections.</p>
+          <ul style="font-size:14px;font-weight:300;color:var(--text-mid);line-height:2;padding-left:0;list-style:none;margin-bottom:28px;">
+            <li>✦ &nbsp;Suburb & market research</li>
+            <li>✦ &nbsp;On & off-market sourcing</li>
+            <li>✦ &nbsp;Independent property analysis</li>
+            <li>✦ &nbsp;Detailed shortlist report</li>
+          </ul>
+          <button class="service-link" onclick="scrollToSection('contact')">Enquire Now →</button>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="padding-top:0;">
+        <div style="margin:0 0 32px;height:200px;overflow:hidden;border-radius:2px 2px 0 0;">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80&fit=crop" alt="Negotiation and auction" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="padding:0 40px 48px;">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Negotiation & Auction Bidding</h3>
+          <p>Found a property you love but unsure how to play your next move? We step in to handle the negotiation or bid at auction — so you don't pay more than you should.</p>
+          <ul style="font-size:14px;font-weight:300;color:var(--text-mid);line-height:2;padding-left:0;list-style:none;margin-bottom:28px;">
+            <li>✦ &nbsp;Independent market valuation</li>
+            <li>✦ &nbsp;Negotiation strategy</li>
+            <li>✦ &nbsp;Auction representation</li>
+            <li>✦ &nbsp;Contract review coordination</li>
+          </ul>
+          <button class="service-link" onclick="scrollToSection('contact')">Enquire Now →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="process-header fade-up">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Simple, clear, <em>proven</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-dot"><span>01</span></div>
+        <h4>Discovery Call</h4>
+        <p>A free, no-obligation chat to understand your goals, budget, and timeline. We make sure we're the right fit before you commit to anything.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-dot"><span>02</span></div>
+        <h4>Buyer Brief</h4>
+        <p>We document exactly what you're looking for — property type, location, must-haves, deal-breakers — so we're searching with precision from day one.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-dot"><span>03</span></div>
+        <h4>Search & Assess</h4>
+        <p>We scour the full market — listed and off-market — shortlisting only the properties that genuinely meet your brief. No filler, just quality.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-dot"><span>04</span></div>
+        <h4>Negotiate & Secure</h4>
+        <p>We handle all negotiations with the selling agent, leveraging market data and experience to secure the best possible price and terms.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-dot"><span>05</span></div>
+        <h4>Settlement</h4>
+        <p>We coordinate building & pest, solicitors, and final checks to ensure a smooth path to settlement. You get the keys with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:420px;overflow:hidden;position:relative;">
+  <img src="https://images.unsplash.com/photo-1524293851-7b49a8b94db9?w=1800&q=80&fit=crop&crop=center" alt="Brisbane skyline and river" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,28,56,0.7) 0%,rgba(12,28,56,0.2) 60%,rgba(12,28,56,0.0) 100%);display:flex;align-items:center;padding:0 5%;">
+    <div>
+      <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);margin-bottom:12px;">Our Market</p>
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4vw,48px);font-weight:300;color:#fff;line-height:1.2;max-width:480px;">Brisbane & Southeast Queensland — one of Australia's strongest property markets.</p>
+    </div>
+  </div>
+</div>
+
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Why Clearvue</div>
+      <h2 class="section-title">We work for <em>you.</em> Only you.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>100% on the buyer's side</h4>
+            <p>Unlike selling agents, we have no relationship with vendors, developers, or builders. Our only obligation is to you and your outcome.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Flat fee transparency</h4>
+            <p>No percentage-based commissions that reward us for finding you a more expensive property. Our flat fee means our interests are fully aligned with yours.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Qualified & licensed</h4>
+            <p>Operating under the Queensland Property Occupations Act 2014, with formal qualifications and the rigour of a CA background applied to every property analysis.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Built for first home buyers</h4>
+            <p>We understand the pressure of buying your first home. Our process is designed to be approachable, clear, and free of industry jargon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right fade-up">
+      <div class="why-accent-box" style="position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80&fit=crop" alt="Property handover keys" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;border-radius:4px;">
+        <div style="position:relative;z-index:2;">
+          <p>"Property is likely the largest purchase you'll ever make. You deserve someone in your corner who genuinely knows what they're doing."</p>
+          <div class="rule"></div>
+          <cite>Connor — Clearvue Property</cite>
+        </div>
+      </div>
+      <div class="why-features">
+        <div class="why-feature"><div class="why-feature-icon">✦</div><h5>Brisbane Based</h5><p>Local knowledge of Southeast QLD suburbs, market dynamics, and growth corridors.</p></div>
+        <div class="why-feature"><div class="why-feature-icon">✦</div><h5>No Conflicts</h5><p>Full conflict of interest disclosure provided upfront. We work for you — nobody else.</p></div>
+        <div class="why-feature"><div class="why-feature-icon">✦</div><h5>Off-Market Access</h5><p>Agent relationships built over time mean access to properties before they hit the portals.</p></div>
+        <div class="why-feature"><div class="why-feature-icon">✦</div><h5>Flat Fee Only</h5><p>Retainer on engagement, success fee on unconditional exchange. Simple, transparent, aligned.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to buy smarter?</h2>
+      <p>Book a free 30-minute discovery call — no obligation, no pressure.</p>
+    </div>
+    <button class="btn-cta-white" onclick="scrollToSection('booking')">Book Your Free Call</button>
+  </div>
+</div>
+
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header fade-up">
+      <div class="section-eyebrow">Common Questions</div>
+      <h2 class="section-title">FAQ</h2>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What exactly does a buyers agent do? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">A buyers agent works exclusively for the buyer — not the seller. We search the market, assess properties, handle negotiations, and manage the process through to settlement. Unlike selling agents who are legally obligated to achieve the best outcome for the vendor, we're entirely focused on protecting your interests and getting you the right property at the right price.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How does the flat fee structure work? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Clearvue Property charges a fixed, transparent fee — not a percentage of the purchase price. You pay a non-refundable retainer when we engage, and a success fee upon unconditional exchange of contracts. This means our fee doesn't change whether we find you a $500,000 home or an $800,000 home — we have no financial incentive to push you toward a more expensive property. Fees are confirmed upfront in your Buyer Engagement Agreement.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is Clearvue Property licensed? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Clearvue Property operates under a Queensland real estate licence in accordance with the Property Occupations Act 2014. All engagements are formalised through a PO Form 6 (Appointment of Buyer's Agent), which sets out the scope of our engagement, fees, and obligations. You'll receive full disclosure documentation before any agreement is signed.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you work with first home buyers or just investors? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Both. Clearvue Property was deliberately built to serve both first home buyers and property investors. For first home buyers, we focus on making the process clear, accessible, and stress-free. For investors, we apply a more analytical lens — assessing yield, growth potential, vacancy rates, and long-term portfolio fit. Either way, the level of care and expertise is the same.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How long does it typically take to find a property? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Timeframes vary depending on your brief, budget, and how competitive the market is. Generally, most clients secure a property within 6–12 weeks of engagement. We don't rush the process — it's more important to get the right property than a fast one. That said, our market access and agent relationships often give us a head start that shortens the timeline significantly.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What areas do you cover? <span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">We primarily operate across Brisbane and Southeast Queensland, including the inner suburbs, middle ring, and key growth corridors. If you have specific suburb requirements, bring them to your discovery call and we'll let you know whether they fall within our coverage area.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="booking-inner">
+    <div class="booking-header">
+      <div class="fade-up">
+        <div class="section-eyebrow" style="color:var(--tan);">Book a Call</div>
+        <h2 class="section-title">Let's talk about <em>your</em> property goals</h2>
+      </div>
+      <div class="booking-right fade-up">
+        <p>A free 30-minute discovery call — no obligation, no sales pressure. Just a straightforward conversation about where you're at and how we can help you move forward with confidence.</p>
+        <div class="booking-perks">
+          <div class="booking-perk"><div class="booking-perk-dot"></div>Free & no obligation</div>
+          <div class="booking-perk"><div class="booking-perk-dot"></div>30 minutes via phone or video</div>
+          <div class="booking-perk"><div class="booking-perk-dot"></div>Tailored to your situation</div>
+          <div class="booking-perk"><div class="booking-perk-dot"></div>Pick a time that suits you</div>
+        </div>
+      </div>
+    </div>
+    <div class="calendly-embed fade-up">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/connor-clearvueproperty/30min?hide_gdpr_banner=1&primary_color=9A8B78" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Let's have a <em>conversation</em></h2>
+      <h3 style="font-family:var(--font-display);font-size:20px;font-weight:400;color:var(--navy);margin-bottom:8px;">Send us a message</h3>
+      <p style="font-size:15px;font-weight:300;color:var(--text-mid);line-height:1.8;margin-bottom:32px;">Prefer to write? Fill out the form and we'll be in touch within one business day.</p>
+      <div class="contact-detail"><div class="contact-dot"></div><span>Brisbane, Queensland</span></div>
+      <div class="contact-detail"><div class="contact-dot"></div><a href="mailto:Connor@clearvueproperty.com.au">Connor@clearvueproperty.com.au</a></div>
+      <div class="contact-detail"><div class="contact-dot"></div><span>ABN 92 490 611 590</span></div>
+      <div class="contact-detail"><div class="contact-dot"></div><span>Licensed under QLD Property Occupations Act 2014</span></div>
+    </div>
+
+    <form class="contact-form fade-up" id="contactForm" action="https://formspree.io/f/mzdwdnjz" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from Clearvue Property website">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first_name" placeholder="Alex" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last_name" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="alex@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="0400 000 000">
+      </div>
+      <div class="form-group">
+        <label for="buyer-type">I am a…</label>
+        <select id="buyer-type" name="buyer_type">
+          <option value="" disabled selected>Select one</option>
+          <option value="First Home Buyer">First Home Buyer</option>
+          <option value="Property Investor">Property Investor</option>
+          <option value="Upgrading / Upsizing">Upgrading / Upsizing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="budget">Approximate Budget</label>
+        <select id="budget" name="budget">
+          <option value="" disabled selected>Select a range</option>
+          <option>Under $500,000</option>
+          <option>$500,000 – $700,000</option>
+          <option>$700,000 – $1,000,000</option>
+          <option>$1,000,000 – $1,500,000</option>
+          <option>$1,500,000+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Anything else you'd like us to know?</label>
+        <textarea id="message" name="message" placeholder="Tell us a bit about what you're looking for…"></textarea>
+      </div>
+      <button class="form-submit" type="submit" id="submitBtn">Send Enquiry →</button>
+      <div id="formSuccess" style="display:none;margin-top:24px;padding:40px 24px;background:var(--tan-pale);border:1px solid var(--tan-light);border-radius:4px;text-align:center;">
+        <div class="success-tick-wrap">
+          <svg class="success-tick" viewBox="0 0 52 52">
+            <circle class="tick-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="tick-check" fill="none" d="M14 27l8 8 16-16"/>
+          </svg>
+        </div>
+        <p style="font-family:var(--font-display);font-size:24px;font-weight:300;color:var(--navy);margin:16px 0 8px;">Enquiry sent!</p>
+        <p style="font-size:14px;font-weight:300;color:var(--text-mid);">Thanks for reaching out. We'll be in touch within one business day.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Clearvue<span> Property</span></div>
+      <p class="footer-tagline">Brisbane's buyers agency for first home buyers and investors who want to move forward with clarity and confidence.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Services</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('process')">How It Works</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('why')">Why Clearvue</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('faq')">FAQ</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Full Buyers Agency</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Property Search & Assessment</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Negotiation & Auction Bidding</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      © 2025 Clearvue Property Pty Ltd &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a><br>
+      Licensed under the Property Occupations Act 2014 (QLD). General information only — not financial or legal advice.
+    </div>
+    <div class="footer-abn">ABN 92 490 611 590</div>
+  </div>
+</footer>
+
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileNav');
+    const isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open');
+    const bars = document.querySelectorAll('.hamburger span');
+    if (!isOpen) {
+      bars[0].style.transform = 'translateY(6px) rotate(45deg)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '';
+      bars[2].style.transform = '';
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileNav');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.closest('.hamburger')) {
+      toggleMenu();
+    }
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const fname = document.getElementById('fname').value;
+    if (!fname || !email) { alert('Please fill in your name and email address.'); return; }
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/mzdwdnjz', {
+        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        const fields = this.querySelectorAll('.form-group, .form-row');
+        fields.forEach(f => f.classList.add('form-fields-hide'));
+        btn.classList.add('form-fields-hide');
+        setTimeout(() => {
+          fields.forEach(f => f.style.display = 'none');
+          btn.style.display = 'none';
+          const success = document.getElementById('formSuccess');
+          success.style.display = 'block';
+          success.classList.add('show');
+        }, 380);
+        this.reset();
+      } else {
+        btn.textContent = 'Something went wrong — please try again.';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = 'Network error — please try again.';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>
